@@ -4,5 +4,14 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world"
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Run script
+        run: |
+          echo "Hello, world"
+          echo 2
+          git log -1
+          tree -a .
+      - name: Checkout repository
+        uses: actions/checkout@v4
